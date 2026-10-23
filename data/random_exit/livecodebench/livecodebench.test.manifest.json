@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "dataset": "livecodebench",
+  "split": "test",
+  "dataset_size": 1055,
+  "dataset_fingerprint": "51d0196e05e19f16fe575770e69cf0997e7f9672491d205b9588fdb9401540be",
+  "sample_size": 64,
+  "sample_seed": 0,
+  "candidate_size": 1023,
+  "candidate_fingerprint": "c927092c9ec1f0335f686ea1b1982116f9bd090a5fe684805b57deb64eb2edf5",
+  "items": [
+    {
+      "data_id": "livecodebench:45",
+      "line_number": 45
+    },
+    {
+      "data_id": "livecodebench:82",
+      "line_number": 82
+    },
+    {
+      "data_id": "livecodebench:106",
+      "line_number": 106
+    },
+    {
+      "data_id": "livecodebench:111",
+      "line_number": 111
+    },
+    {
+      "data_id": "livecodebench:113",
+      "line_number": 113
+    },
+    {
+      "data_id": "livecodebench:155",
+      "line_number": 155
+    },
+    {
+      "data_id": "livecodebench:156",
+      "line_number": 156
+    },
+    {
+      "data_id": "livecodebench:164",
+      "line_number": 164
+    },
+    {
+      "data_id": "livecodebench:227",
+      "line_number": 227
+    },
+    {
+      "data_id": "livecodebench:241",
+      "line_number": 241
+    },
+    {
+      "data_id": "livecodebench:274",
+      "line_number": 274
+    },
+    {
+      "data_id": "livecodebench:283",
+      "line_number": 283
+    },
+    {
+      "data_id": "livecodebench:284",
+      "line_number": 284
+    },
+    {
+      "data_id": "livecodebench:306",
+      "line_number": 306
+    },
+    {
+      "data_id": "livecodebench:328",
+      "line_number": 328
+    },
+    {
+      "data_id": "livecodebench:335",
+      "line_number": 335
+    },
+    {
+      "data_id": "livecodebench:341",
+      "line_number": 341
+    },
+    {
+      "data_id": "livecodebench:356",
+      "line_number": 356
+    },
+    {
+      "data_id": "livecodebench:380",
+      "line_number": 380
+    },
+    {
+      "data_id": "livecodebench:384",
+      "line_number": 384
+    },
+    {
+      "data_id": "livecodebench:412",
+      "line_number": 412
+    },
+    {
+      "data_id": "livecodebench:432",
+      "line_number": 432
+    },
+    {
+      "data_id": "livecodebench:448",
+      "line_number": 448
+    },
+    {
+      "data_id": "livecodebench:462",
+      "line_number": 462
+    },
+    {
+      "data_id": "livecodebench:471",
+      "line_number": 471
+    },
+    {
+      "data_id": "livecodebench:508",
+      "line_number": 508
+    },
+    {
+      "data_id": "livecodebench:515",
+      "line_number": 515
+    },
+    {
+      "data_id": "livecodebench:524",
+      "line_number": 524
+    },
+    {
+      "data_id": "livecodebench:543",
+      "line_number": 543
+    },
+    {
+      "data_id": "livecodebench:550",
+      "line_number": 550
+    },
+    {
+      "data_id": "livecodebench:560",
+      "line_number": 560
+    },
+    {
+      "data_id": "livecodebench:572",
+      "line_number": 572
+    },
+    {
+      "data_id": "livecodebench:592",
+      "line_number": 592
+    },
+    {
+      "data_id": "livecodebench:600",
+      "line_number": 600
+    },
+    {
+      "data_id": "livecodebench:624",
+      "line_number": 624
+    },
+    {
+      "data_id": "livecodebench:643",
+      "line_number": 643
+    },
+    {
+      "data_id": "livecodebench:652",
+      "line_number": 652
+    },
+    {
+      "data_id": "livecodebench:660",
+      "line_number": 660
+    },
+    {
+      "data_id": "livecodebench:682",
+      "line_number": 682
+    },
+    {
+      "data_id": "livecodebench:731",
+      "line_number": 731
+    },
+    {
+      "data_id": "livecodebench:753",
+      "line_number": 753
+    },
+    {
+      "data_id": "livecodebench:778",
+      "line_number": 778
+    },
+    {
+      "data_id": "livecodebench:804",
+      "line_number": 804
+    },
+    {
+      "data_id": "livecodebench:807",
+      "line_number": 807
+    },
+    {
+      "data_id": "livecodebench:834",
+      "line_number": 834
+    },
+    {
+      "data_id": "livecodebench:850",
+      "line_number": 850
+    },
+    {
+      "data_id": "livecodebench:861",
+      "line_number": 861
+    },
+    {
+      "data_id": "livecodebench:882",
+      "line_number": 882
+    },
+    {
+      "data_id": "livecodebench:897",
+      "line_number": 897
+    },
+    {
+      "data_id": "livecodebench:903",
+      "line_number": 903
+    },
+    {
+      "data_id": "livecodebench:919",
+      "line_number": 919
+    },
+    {
+      "data_id": "livecodebench:944",
+      "line_number": 944
+    },
+    {
+      "data_id": "livecodebench:946",
+      "line_number": 946
+    },
+    {
+      "data_id": "livecodebench:953",
+      "line_number": 953
+    },
+    {
+      "data_id": "livecodebench:956",
+      "line_number": 956
+    },
+    {
+      "data_id": "livecodebench:962",
+      "line_number": 962
+    },
+    {
+      "data_id": "livecodebench:964",
+      "line_number": 964
+    },
+    {
+      "data_id": "livecodebench:967",
+      "line_number": 967
+    },
+    {
+      "data_id": "livecodebench:973",
+      "line_number": 973
+    },
+    {
+      "data_id": "livecodebench:1021",
+      "line_number": 1021
+    },
+    {
+      "data_id": "livecodebench:1022",
+      "line_number": 1022
+    },
+    {
+      "data_id": "livecodebench:1024",
+      "line_number": 1024
+    },
+    {
+      "data_id": "livecodebench:1039",
+      "line_number": 1039
+    },
+    {
+      "data_id": "livecodebench:1043",
+      "line_number": 1043
+    }
+  ],
+  "identity": "9bf8db554677e29b9343fad4a0c18967439b47e4dbffd50d6c35b8d537593e3b"
+}

@@ -1,0 +1,725 @@
+method:
+  simple: methods.simple.SimpleAgent
+  simple_full: methods.simple.SimpleAgentFullGeneration
+  vanilla: methods.vanilla.VanillaAgent
+  vanilla_reuse: methods.vanilla.VanillaAgentReuseGeneration
+  deer: methods.deer.DEERAgent
+  deer_full: methods.deer.DEERAgentFullGeneration
+  dtsr: methods.dtsr.DTSRAgent
+  dtsr_full: methods.dtsr.DTSRAgentFullGeneration
+  dtsr_reuse: methods.dtsr.DTSRAgentReuseGeneration
+  puma: methods.puma.PUMAAgent
+  puma_full: methods.puma.PUMAAgentFullGeneration
+  replay_eval: replay_eval.replay.ReplayEvaluatorAgentFullGeneration
+
+dataloader:
+  gsm8k: dataloader.gsm8k.load_gsm8k
+  tiny_gsm8k: dataloader.gsm8k.load_tiny_gsm8k
+  math500: dataloader.math500.load_math500
+  mmlu_pro: dataloader.mmlu_pro.load_mmlu_pro
+  mmlu_pro_val: dataloader.mmlu_pro.load_mmlu_pro_val
+  mmlu_pro_subset: dataloader.mmlu_pro_subset.load_mmlu_pro_subset
+  aime26: dataloader.aime26.load_aime26
+  stability_test: dataloader.stability_test.load_stability_test
+  gpqa_diamond: dataloader.gpqa_diamond.load_gpqa_diamond
+  truthfulqa: dataloader.truthfulqa.load_truthfulqa
+  halueval: dataloader.halueval.load_halueval
+  humaneval: dataloader.humaneval.load_humaneval
+  livecodebench: dataloader.livecodebench.load_livecodebench
+
+evaluator:
+  gsm8k: evaluator.gsm8k.math_equal
+  code_exec: evaluator.code_exec.code_exec_equal
+  code_exec_fix: evaluator.code_exec_fix.code_exec_equal
+  math500: evaluator.math500.math_equal
+  mmlu_pro: evaluator.mmlu_pro.multiple_choice_equal
+  mmlu_pro_subset: evaluator.mmlu_pro.multiple_choice_equal
+  stability_test: evaluator.math500.math_equal
+  truthfulqa: evaluator.truthfulqa.multiple_choice_equal
+  halueval: evaluator.halueval.label_equal
+
+system_prompt:
+  dataset:
+    gsm8k: prompt/gsm8k.md
+    math500: prompt/math500.md
+    aime26: prompt/aime26.md
+    stability_test: prompt/math500.md
+    gpqa_diamond: prompt/gpqa_diamond.md
+    truthfulqa: prompt/truthfulqa.md
+    halueval: prompt/halueval.md
+    mmlu_pro: prompt/mmlu_pro.md
+    mmlu_pro_subset: prompt/mmlu_pro_subset.md
+    humaneval: prompt/humaneval.md
+    livecodebench: prompt/livecodebench.md
+  agent: {}
+
+agent_kwargs:
+  simple:
+    max_steps: 50
+  simple_full:
+    max_steps: 50
+  vanilla:
+    token_budgets:
+      # - 100
+      - 500
+      - 1000
+      - 2000
+      - 5000
+      - 10000
+      - 20000
+  vanilla_reuse:
+    token_budgets:
+      # - 100
+      - 500
+      - 1000
+      - 2000
+      - 5000
+      - 10000
+      - 20000
+  deer:
+    max_steps: 5000
+    threshold: 0.95
+    probe_tokens: 20
+    probe_logprobs: 3
+  deer_full:
+    max_steps: 5000
+    threshold: 0.95
+    probe_tokens: 20
+    probe_logprobs: 3
+  dtsr:
+    max_steps: 5000
+    threshold: 99
+    min_interval: 64
+  dtsr_full:
+    max_steps: 5000
+    threshold: 99
+    min_interval: 64
+  dtsr_reuse:
+    max_steps: 5000
+    threshold: 99
+    min_interval: 64
+  puma:
+    max_steps: 5000
+    similarity_threshold: 0.35
+    confidence_threshold: 0.98
+    epsilon: 0.03
+    consecutive: 2
+    probe_tokens: 15
+    probe_logprobs: 3
+    window_size: 1
+    consecutive_redundancy_stop: 50
+  puma_full:
+    max_steps: 5000
+    similarity_threshold: 0.35
+    confidence_threshold: 0.98
+    epsilon: 0.03
+    consecutive: 2
+    probe_tokens: 15
+    probe_logprobs: 3
+    window_size: 1
+    consecutive_redundancy_stop: 50
+  replay_eval:
+    # false: save every confirmed exit as method:1, method:2, ... and continue.
+    exit: true
+    # 1: existing synchronous replay; 2: asynchronous native-vLLM replay.
+    version: 1
+    verify_batch_token: 16
+    final_answer_batch_size: 16
+    code_probe_token_multiplier: 5
+    code_threshold_multiplier: 1.0
+    v2:
+      random_exit:
+        enabled: false
+        sample_size: 64
+        sample_seed: 0
+        position_seed: 0
+        spacing: 32
+        max_positions: 64
+        num_runs: 6
+        min_valid_positions: 5
+      runtime:
+        max_concurrency: 8
+        example_concurrency: 2
+        # Skip an example with a warning when its complete replay exceeds 5 minutes.
+        example_timeout_seconds: 600
+        warmup: true
+        rerun_all: true
+        rerun_final_answer: false
+        max_final_answer_completion_token: 3072
+        # Accept the first checkpoint per method, then require this token gap.
+        min_interval: 32 # 64
+        sampling:
+          temperature: 0.6
+          max_tokens: 38000
+      extraction:
+        mode: callback
+        callback: replay_eval.v2.engine.vllm_hidden_states.extract_trace
+        temp_dir: /tmp/replay-v2-extraction
+        # Empty layers disable DoLa extraction for replay runs.
+        dola_layers: []
+      methods:
+        - factory: replay_eval.v2.runtime.hidden_models.build_terminator_method
+          kwargs:
+            name: terminator_hf
+            artifact_dir: checkpoints/terminator/replay/r1_qwen3_8b
+            threshold: 0.51
+            classification_threshold: 0.7
+            replay_tokens: 16
+            window_size: 10
+            precompute_chunk_size: 256
+            device: cuda
+            dtype: auto
+            position_mode: assistant_relative
+        - factory: replay_eval.v2.runtime.hidden_models.build_thought_calibration_method
+          kwargs:
+            name: thought_calibration
+            artifact_dir: checkpoints/thought_calibration/replay/r1_qwen3_8b
+            risk_tolerance: 0.05
+            check_every: 64
+            device: cuda
+            dtype: auto
+    methods:
+      - factory: replay_eval.methods.build_deer_method
+        kwargs:
+          name: deer
+          threshold: 0.95
+          probe_tokens: 20
+          probe_logprobs: 5
+          reflection_signals:
+            - "wait"
+            - "Wait"
+            - "but"
+            - "But"
+      - factory: replay_eval.methods.build_entrocut_method
+        kwargs:
+          name: entrocut
+          threshold: 0.2
+          probe_tokens: 20
+          probe_logprobs: 20
+          reflection_signals:
+            - "wait"
+            - "Wait"
+            - "but"
+            - "But"
+      - factory: replay_eval.methods.build_statistical_method
+        kwargs:
+          name: statistical_early_stop
+          B: 256 # 96
+          alpha: 0.025 # 0.05
+      - factory: replay_eval.methods.build_codestop_method
+        kwargs:
+          name: codestop
+          conf_threshold: 0.95
+          degen_threshold: 1.0
+          stop_word: "Wait"
+          reflection_signals:
+            - "wait"
+            - "Wait"
+            - "but"
+            - "But"
+          probe_tokens: 20
+          probe_logprobs: 5
+          use_log: true
+          ewt: true
+      - factory: replay_eval.methods.build_dtsr_method
+        kwargs:
+          name: dtsr
+          threshold: 80
+          min_interval: 128 # 96
+          llm: same
+          probe_tokens: 20
+          reflection_signals:
+            - "wait"
+            - "Wait"
+            - "but"
+            - "But"
+      - factory: replay_eval.methods.build_answer_coverage_method
+        kwargs:
+          name: answer-coverage
+          check_every: 128 # 128
+          window_size: 10
+          collect_answer: evaluator.math500.extract_final_answer
+          collect_coding_answer: evaluator.code_exec.code_exec_equal_public
+          llm: same
+      - factory: replay_eval.methods.build_dynasor_method
+        kwargs:
+          name: dynasor
+          check_every: 128 # 128
+          window_size: 5
+          consistency_threshold: 0.8
+          uncertainty_signals:
+            - "wait"
+            - "hmm"
+            - "but"
+          collect_answer: evaluator.math500.extract_final_answer
+          collect_coding_answer: evaluator.code_exec.code_exec_equal_public
+          llm: same
+
+      # - factory: replay_eval.methods.build_puma_method
+      #   kwargs:
+      #     name: puma
+      #     similarity_threshold: 0.35 # 0.3
+      #     confidence_threshold: 0.9
+      #     epsilon: 0.05
+      #     consecutive: 2
+      #     probe_tokens: 15
+      #     probe_logprobs: 3
+      #     window_size: 1
+      #     consecutive_redundancy_stop: 40 # 50
+      #     embedding_device: cuda
+      #     embedding_batch_size: 4
+      #     embedding_max_tokens: 2048
+      #     collect_answer: evaluator.math500.extract_final_answer
+      #     collect_coding_answer: evaluator.code_exec.code_exec_equal_public
+      #     min_step_chars: 200 # 200, 500
+      #     max_step_chars: 1000 # 1000, 4000
+
+      # - factory: replay_eval.methods.build_eat_method
+      #   kwargs:
+      #     name: eat
+      #     threshold: 2.0
+      #     warmup_steps: 50
+      #     entropy_decoding_steps: 20
+      #     entropy_rollouts: 10
+      #     timescale: 10.0
+      #     probe_logprobs: 20
+      #     min_step_chars: 200
+      #     max_step_chars: 120
+
+      # - factory: replay_eval.methods.build_flash_think_method
+      #   kwargs:
+      #     name: flash_think
+      #     threshold: 80
+      #     min_interval: 64
+      #     llm: custom
+      #     llm_name: deepinfra:Qwen/Qwen2.5-7B-Instruct
+      #     chat_template:
+      #       type: hf
+      #       model_id: Qwen/Qwen2.5-7B-Instruct
+      #       add_generation_prompt: true
+      #       think_start_token: "<think>"
+      #       think_end_token: "</think>"
+      #     completion_kwargs:
+      #       temperature: 0
+      #       max_completion_token: 64
+
+      - factory: replay_eval.methods.build_baseline_no_thinking
+        kwargs:
+          name: baseline_no_thinking
+        
+      - factory: replay_eval.methods.build_baseline_500_method
+        kwargs:
+          name: baseline_500
+
+      - factory: replay_eval.methods.build_baseline_1000_method
+        kwargs:
+          name: baseline_1K
+      
+      - factory: replay_eval.methods.build_baseline_1500_method
+        kwargs:
+          name: baseline_1.5K
+
+      - factory: replay_eval.methods.build_baseline_2000_method
+        kwargs:
+          name: baseline_2K
+
+      - factory: replay_eval.methods.build_baseline_3000_method
+        kwargs:
+          name: baseline_3K
+
+      - factory: replay_eval.methods.build_baseline_4000_method
+        kwargs:
+          name: baseline_4K
+
+      - factory: replay_eval.methods.build_baseline_6000_method
+        kwargs:
+          name: baseline_6K
+
+      - factory: replay_eval.methods.build_baseline_8000_method
+        kwargs:
+          name: baseline_8K
+
+      - factory: replay_eval.methods.build_baseline_12000_method
+        kwargs:
+          name: baseline_12K
+
+      - factory: replay_eval.methods.build_baseline_16000_method
+        kwargs:
+          name: baseline_16K
+
+
+      - factory: replay_eval.methods.build_baseline_24000_method
+        kwargs:
+          name: baseline_24K
+
+
+
+llm:
+  default: qwen3_32b_think
+  logprobs: 50
+  include_detailed_logprobs: false
+  # Global native-vLLM configuration. A selected model may override any
+  # individual value through llm.models.<name>.vllm.
+  vllm:
+    dtype: bfloat16
+    max_model_len: 39000
+    max_logprobs: 50
+    tensor_parallel_size: 1
+    gpu_memory_utilization: 0.7
+    environment:
+      # FlashInfer sampling is separate from the attention backend. FlashInfer
+      # 0.6.x can misclassify SM120 as older than SM75; use the native sampler.
+      VLLM_USE_FLASHINFER_SAMPLER: "0"
+    engine_kwargs:
+      enforce_eager: true
+      worker_extension_cls: replay_eval.v2.engine.vllm_hidden_states.HiddenStateWorkerExtension
+    serving:
+      enable_prefix_caching: true
+      enable_chunked_prefill: true
+      max_num_seqs: 8
+      # Hidden capture retains two full hidden streams in addition to vLLM's
+      # normal prefill workspace. Keep chunks small on 32 GiB cards.
+      max_num_batched_tokens: 2048
+  completion_kwargs:
+    stop:
+      # - "\n\n"
+      - "wait"
+      - "Wait"
+      - "Alternative"
+      - "Alternatively"
+      - "But wait"
+      - "But let me"
+      - "But let's"
+      - "But let’s"
+    max_thinking_completion_token: 64
+    max_completion_token: 32000  # Total thinking budget before forced finalization.
+    max_final_answer_completion_token: 3072  # 2048
+    max_temp_answer_completion_token: 16 # 512
+  models:
+    qwen3_8b_think:
+      name: qwen3_8b_think
+      id: vllm:Qwen/Qwen3-8B
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        model_id: Qwen/Qwen3-8B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+    
+    qwen3_8b_no_think:
+      name: qwen3_8b_no_think
+      id: vllm:Qwen/Qwen3-8B
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        model_id: Qwen/Qwen3-8B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: false
+      completion_kwargs:
+        temperature: 0.6
+    
+    qwen3_32b_think:
+      name: qwen3_32b_think
+      id: deepinfra:Qwen/Qwen3-32B
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        model_id: Qwen/Qwen3-32B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    qwen36_27b:
+      name: qwen36_27b
+      id: deepinfra:Qwen/Qwen3.6-27B
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        template: qwen3_xml
+        model_id: Qwen/Qwen3.6-27B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    qwen36_35b_a3b:
+      name: qwen36_35b_a3b
+      id: deepinfra:Qwen/Qwen3.6-35B-A3B
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        template: qwen3_xml
+        model_id: Qwen/Qwen3.6-35B-A3B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    r1_qwen3_8b:
+      name: r1_qwen3_8b
+      id: vllm:deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        template: qwen3
+        model_id: deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    phi4_mini:
+      name: phi4_mini
+      id: vllm:microsoft/Phi-4-mini-reasoning
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        # template: qwen3_xml
+        model_id: microsoft/Phi-4-mini-reasoning
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    gemma4e4:
+      name: gemma4e4
+      id: vllm:google/gemma-4-E4B-it
+      think_start_token: "<|channel>thought\n"
+      think_end_token: "<channel|>"
+      chat_template:
+        type: hf
+        template: gemma4
+        model_id: google/gemma-4-E4B-it
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+        extra_body:
+          skip_special_tokens: false
+
+    gemma4e2:
+      name: gemma4e2
+      id: vllm:google/gemma-4-E2B-it
+      think_start_token: "<|channel>thought\n"
+      think_end_token: "<channel|>"
+      chat_template:
+        type: hf
+        template: gemma4
+        model_id: google/gemma-4-E2B-it
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+        extra_body:
+          skip_special_tokens: false
+
+    phi4_mini:
+      name: phi4_mini
+      id: vllm:microsoft/Phi-4-mini-reasoning
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        # template: qwen3_xml
+        model_id: microsoft/Phi-4-mini-reasoning
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    qwen35_4b:
+      name: qwen35_4b
+      id: vllm:Qwen/Qwen3.5-4B
+      vllm:
+        engine_kwargs:
+          # Non-FlashAttention fallback for Qwen 3.5's decoder and GDN path.
+          # attention_config:
+          #   backend: TRITON_ATTN
+          gdn_prefill_backend: triton
+        # MTP creates a separate drafter whose attention backend does not
+        # inherit the target's TRITON_ATTN override. Keep disabled while using
+        # the RTX 5090 / SM120 FlashInfer workarounds above.
+        serving:
+          speculative_config:
+            method: mtp
+            num_speculative_tokens: 2
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        template: qwen3_xml
+        model_id: Qwen/Qwen3.5-4B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    qwen35_9b:
+      name: qwen35_9b
+      id: vllm:Qwen/Qwen3.5-9B
+      vllm:
+        engine_kwargs:
+          # Override or remove these values to try another vLLM backend.
+          # attention_config:
+          #   backend: TRITON_ATTN
+          gdn_prefill_backend: triton
+        # MTP creates a separate drafter whose attention backend does not
+        # inherit the target's TRITON_ATTN override. Keep disabled while using
+        # the RTX 5090 / SM120 FlashInfer workarounds above.
+        serving:
+          speculative_config:
+            method: mtp
+            num_speculative_tokens: 2
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        template: qwen3_xml
+        model_id: Qwen/Qwen3.5-9B
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    deepseek_v4_flash:
+      name: deepseek_v4_flash
+      id: deepinfra:deepseek-ai/DeepSeek-V4-Flash
+      think_start_token: "<think>"
+      think_end_token: "</think>"
+      chat_template:
+        type: hf
+        template: deepseek_v4
+        model_id: deepseek-ai/DeepSeek-V4-Flash
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+
+    gpt_oss_120b_medium:
+      name: gpt_oss_120b_medium
+      id: vllm:openai/gpt-oss-120b
+      think_start_token: "<|channel|>analysis<|message|>"
+      think_end_token: "<|end|><|start|>assistant<|channel|>final<|message|>"
+      chat_template:
+        type: hf
+        model_id: openai/gpt-oss-120b
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+
+    
+    gpt_oss_120b_low:
+      name: gpt_oss_120b_low
+      id: vllm:openai/gpt-oss-120b
+      think_start_token: "<|channel|>analysis<|message|>"
+      think_end_token: "<|end|><|start|>assistant<|channel|>final<|message|>"
+      chat_template:
+        type: hf
+        model_id: openai/gpt-oss-120b
+        template: gpt-oss:low
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+          reasoning_effort: low
+      completion_kwargs:
+        temperature: 0.6
+        reasoning_effort: low
+
+    gpt_oss_120b_high:
+      name: gpt_oss_120b_high
+      id: vllm:openai/gpt-oss-120b
+      think_start_token: "<|channel|>analysis<|message|>"
+      think_end_token: "<|end|><|start|>assistant<|channel|>final<|message|>"
+      chat_template:
+        type: hf
+        model_id: openai/gpt-oss-120b
+        template: gpt-oss:high
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+          reasoning_effort: high
+      completion_kwargs:
+        temperature: 0.6
+        reasoning_effort: high
+
+    gpt_oss_20b_medium:
+      name: gpt_oss_20b_medium
+      id: vllm:openai/gpt-oss-20b
+      think_start_token: "<|channel|>analysis<|message|>"
+      think_end_token: "<|end|><|start|>assistant<|channel|>final<|message|>"
+      chat_template:
+        type: hf
+        model_id: openai/gpt-oss-20b
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+      completion_kwargs:
+        temperature: 0.6
+        extra_body:
+            skip_special_tokens: false
+
+    
+    gpt_oss_20b_low:
+      name: gpt_oss_20b_low
+      id: vllm:openai/gpt-oss-20b
+      think_start_token: "<|channel|>analysis<|message|>"
+      think_end_token: "<|end|><|start|>assistant<|channel|>final<|message|>"
+      chat_template:
+        type: hf
+        model_id: openai/gpt-oss-20b
+        template: gpt-oss:low
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+          reasoning_effort: low
+      completion_kwargs:
+        temperature: 0.6
+        reasoning_effort: low
+        extra_body:
+            skip_special_tokens: false
+
+    gpt_oss_20b_high:
+      name: gpt_oss_20b_high
+      id: vllm:openai/gpt-oss-20b
+      think_start_token: "<|channel|>analysis<|message|>"
+      think_end_token: "<|end|><|start|>assistant<|channel|>final<|message|>"
+      chat_template:
+        type: hf
+        model_id: openai/gpt-oss-20b
+        template: gpt-oss:high
+        add_generation_prompt: true
+        kwargs:
+          enable_thinking: true
+          reasoning_effort: high
+          
+      completion_kwargs:
+        temperature: 0.6
+        reasoning_effort: high
+        extra_body:
+            skip_special_tokens: false

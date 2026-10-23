@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "9bf8db554677e29b9343fad4a0c18967439b47e4dbffd50d6c35b8d537593e3b",
+  "dataset": "livecodebench",
+  "split": "test",
+  "model": "qwen35_4b",
+  "records": 64,
+  "prompt_provenance": {
+    "stored": 64,
+    "reconstructed_during_replay": 0
+  }
+}

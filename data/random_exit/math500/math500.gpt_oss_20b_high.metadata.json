@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "d2d54a788480012f8df199fd4700c57490c1c449c7961d54a61de13f200b10c3",
+  "dataset": "math500",
+  "split": "test",
+  "model": "gpt_oss_20b_high",
+  "records": 128,
+  "prompt_provenance": {
+    "stored": 128,
+    "reconstructed_during_replay": 0
+  }
+}

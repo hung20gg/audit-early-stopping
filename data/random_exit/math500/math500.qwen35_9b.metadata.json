@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "d2d54a788480012f8df199fd4700c57490c1c449c7961d54a61de13f200b10c3",
+  "dataset": "math500",
+  "split": "test",
+  "model": "qwen35_9b",
+  "records": 128,
+  "prompt_provenance": {
+    "stored": 128,
+    "reconstructed_during_replay": 0
+  },
+  "source_file": "examples/fix/math500/full_v2_1_replay_eval_qwen35_9b_20260820_080042.jsonl"
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "1a5aa898f0b8f34d046a65e705fb4670f66afd69f42a4512f3a0d7dd135039bb",
+  "dataset": "truthfulqa",
+  "split": "test",
+  "model": "qwen35_9b",
+  "records": 128,
+  "prompt_provenance": {
+    "stored": 128,
+    "reconstructed_during_replay": 0
+  },
+  "source_file": "examples/fix/truthfulqa/full_1_replay_eval_qwen35_9b_20260817_041454.jsonl"
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "62c7fa2bb359f72526bf11054654faa8e99151829017f1b1efe27e633e4f7aaa",
+  "dataset": "math500",
+  "split": "test",
+  "model": "gemma4e4",
+  "records": 64,
+  "prompt_provenance": {
+    "stored": 0,
+    "reconstructed_during_replay": 64
+  }
+}

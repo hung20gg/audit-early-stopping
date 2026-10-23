@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "dataset": "aime26",
+  "split": "test",
+  "dataset_size": 30,
+  "dataset_fingerprint": "73339b709866e6daf7af87ac0749c5c4846de9960f6837f72bcbe8922dcb8a30",
+  "sample_size": 64,
+  "sample_seed": 0,
+  "candidate_size": 29,
+  "candidate_fingerprint": "0f5c817379cb7d8765288861d94923d077b1ec04ae3fea88095f3908775734d0",
+  "items": [
+    {
+      "data_id": "aime26:1",
+      "line_number": 1
+    },
+    {
+      "data_id": "aime26:2",
+      "line_number": 2
+    },
+    {
+      "data_id": "aime26:3",
+      "line_number": 3
+    },
+    {
+      "data_id": "aime26:4",
+      "line_number": 4
+    },
+    {
+      "data_id": "aime26:5",
+      "line_number": 5
+    },
+    {
+      "data_id": "aime26:6",
+      "line_number": 6
+    },
+    {
+      "data_id": "aime26:7",
+      "line_number": 7
+    },
+    {
+      "data_id": "aime26:8",
+      "line_number": 8
+    },
+    {
+      "data_id": "aime26:9",
+      "line_number": 9
+    },
+    {
+      "data_id": "aime26:10",
+      "line_number": 10
+    },
+    {
+      "data_id": "aime26:12",
+      "line_number": 12
+    },
+    {
+      "data_id": "aime26:13",
+      "line_number": 13
+    },
+    {
+      "data_id": "aime26:14",
+      "line_number": 14
+    },
+    {
+      "data_id": "aime26:15",
+      "line_number": 15
+    },
+    {
+      "data_id": "aime26:16",
+      "line_number": 16
+    },
+    {
+      "data_id": "aime26:17",
+      "line_number": 17
+    },
+    {
+      "data_id": "aime26:18",
+      "line_number": 18
+    },
+    {
+      "data_id": "aime26:19",
+      "line_number": 19
+    },
+    {
+      "data_id": "aime26:20",
+      "line_number": 20
+    },
+    {
+      "data_id": "aime26:21",
+      "line_number": 21
+    },
+    {
+      "data_id": "aime26:22",
+      "line_number": 22
+    },
+    {
+      "data_id": "aime26:23",
+      "line_number": 23
+    },
+    {
+      "data_id": "aime26:24",
+      "line_number": 24
+    },
+    {
+      "data_id": "aime26:25",
+      "line_number": 25
+    },
+    {
+      "data_id": "aime26:26",
+      "line_number": 26
+    },
+    {
+      "data_id": "aime26:27",
+      "line_number": 27
+    },
+    {
+      "data_id": "aime26:28",
+      "line_number": 28
+    },
+    {
+      "data_id": "aime26:29",
+      "line_number": 29
+    },
+    {
+      "data_id": "aime26:30",
+      "line_number": 30
+    }
+  ],
+  "identity": "82fe8c7f30a5b1e83028204c022456fa42c4292bdccf355d807a3b3458fb009e"
+}

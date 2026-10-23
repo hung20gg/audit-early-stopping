@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "82fe8c7f30a5b1e83028204c022456fa42c4292bdccf355d807a3b3458fb009e",
+  "dataset": "aime26",
+  "split": "test",
+  "model": "qwen35_4b",
+  "records": 29,
+  "prompt_provenance": {
+    "stored": 29,
+    "reconstructed_during_replay": 0
+  }
+}

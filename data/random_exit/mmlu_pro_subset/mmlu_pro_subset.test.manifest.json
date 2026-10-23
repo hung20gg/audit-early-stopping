@@ -1,0 +1,798 @@
+{
+  "version": 1,
+  "dataset": "mmlu_pro_subset",
+  "split": "test",
+  "dataset_size": 2406,
+  "dataset_fingerprint": "dc73bc25dc1336f37ab405a538bd92305acb16f04f3858117ad0e80056c074d9",
+  "sample_size": 196,
+  "sample_seed": 0,
+  "candidate_size": 2406,
+  "candidate_fingerprint": "a8a0e9680b6086f8258516c0f857488f41f6e6a8898190ee542d39a1205b1e3b",
+  "items": [
+    {
+      "data_id": "mmlu_pro_subset:5",
+      "line_number": 5
+    },
+    {
+      "data_id": "mmlu_pro_subset:51",
+      "line_number": 51
+    },
+    {
+      "data_id": "mmlu_pro_subset:55",
+      "line_number": 55
+    },
+    {
+      "data_id": "mmlu_pro_subset:58",
+      "line_number": 58
+    },
+    {
+      "data_id": "mmlu_pro_subset:67",
+      "line_number": 67
+    },
+    {
+      "data_id": "mmlu_pro_subset:89",
+      "line_number": 89
+    },
+    {
+      "data_id": "mmlu_pro_subset:94",
+      "line_number": 94
+    },
+    {
+      "data_id": "mmlu_pro_subset:110",
+      "line_number": 110
+    },
+    {
+      "data_id": "mmlu_pro_subset:136",
+      "line_number": 136
+    },
+    {
+      "data_id": "mmlu_pro_subset:150",
+      "line_number": 150
+    },
+    {
+      "data_id": "mmlu_pro_subset:159",
+      "line_number": 159
+    },
+    {
+      "data_id": "mmlu_pro_subset:162",
+      "line_number": 162
+    },
+    {
+      "data_id": "mmlu_pro_subset:166",
+      "line_number": 166
+    },
+    {
+      "data_id": "mmlu_pro_subset:186",
+      "line_number": 186
+    },
+    {
+      "data_id": "mmlu_pro_subset:188",
+      "line_number": 188
+    },
+    {
+      "data_id": "mmlu_pro_subset:238",
+      "line_number": 238
+    },
+    {
+      "data_id": "mmlu_pro_subset:251",
+      "line_number": 251
+    },
+    {
+      "data_id": "mmlu_pro_subset:255",
+      "line_number": 255
+    },
+    {
+      "data_id": "mmlu_pro_subset:256",
+      "line_number": 256
+    },
+    {
+      "data_id": "mmlu_pro_subset:258",
+      "line_number": 258
+    },
+    {
+      "data_id": "mmlu_pro_subset:283",
+      "line_number": 283
+    },
+    {
+      "data_id": "mmlu_pro_subset:287",
+      "line_number": 287
+    },
+    {
+      "data_id": "mmlu_pro_subset:295",
+      "line_number": 295
+    },
+    {
+      "data_id": "mmlu_pro_subset:303",
+      "line_number": 303
+    },
+    {
+      "data_id": "mmlu_pro_subset:304",
+      "line_number": 304
+    },
+    {
+      "data_id": "mmlu_pro_subset:324",
+      "line_number": 324
+    },
+    {
+      "data_id": "mmlu_pro_subset:329",
+      "line_number": 329
+    },
+    {
+      "data_id": "mmlu_pro_subset:330",
+      "line_number": 330
+    },
+    {
+      "data_id": "mmlu_pro_subset:338",
+      "line_number": 338
+    },
+    {
+      "data_id": "mmlu_pro_subset:368",
+      "line_number": 368
+    },
+    {
+      "data_id": "mmlu_pro_subset:374",
+      "line_number": 374
+    },
+    {
+      "data_id": "mmlu_pro_subset:375",
+      "line_number": 375
+    },
+    {
+      "data_id": "mmlu_pro_subset:376",
+      "line_number": 376
+    },
+    {
+      "data_id": "mmlu_pro_subset:383",
+      "line_number": 383
+    },
+    {
+      "data_id": "mmlu_pro_subset:389",
+      "line_number": 389
+    },
+    {
+      "data_id": "mmlu_pro_subset:405",
+      "line_number": 405
+    },
+    {
+      "data_id": "mmlu_pro_subset:413",
+      "line_number": 413
+    },
+    {
+      "data_id": "mmlu_pro_subset:414",
+      "line_number": 414
+    },
+    {
+      "data_id": "mmlu_pro_subset:416",
+      "line_number": 416
+    },
+    {
+      "data_id": "mmlu_pro_subset:447",
+      "line_number": 447
+    },
+    {
+      "data_id": "mmlu_pro_subset:473",
+      "line_number": 473
+    },
+    {
+      "data_id": "mmlu_pro_subset:476",
+      "line_number": 476
+    },
+    {
+      "data_id": "mmlu_pro_subset:480",
+      "line_number": 480
+    },
+    {
+      "data_id": "mmlu_pro_subset:481",
+      "line_number": 481
+    },
+    {
+      "data_id": "mmlu_pro_subset:491",
+      "line_number": 491
+    },
+    {
+      "data_id": "mmlu_pro_subset:508",
+      "line_number": 508
+    },
+    {
+      "data_id": "mmlu_pro_subset:510",
+      "line_number": 510
+    },
+    {
+      "data_id": "mmlu_pro_subset:512",
+      "line_number": 512
+    },
+    {
+      "data_id": "mmlu_pro_subset:534",
+      "line_number": 534
+    },
+    {
+      "data_id": "mmlu_pro_subset:543",
+      "line_number": 543
+    },
+    {
+      "data_id": "mmlu_pro_subset:553",
+      "line_number": 553
+    },
+    {
+      "data_id": "mmlu_pro_subset:571",
+      "line_number": 571
+    },
+    {
+      "data_id": "mmlu_pro_subset:573",
+      "line_number": 573
+    },
+    {
+      "data_id": "mmlu_pro_subset:584",
+      "line_number": 584
+    },
+    {
+      "data_id": "mmlu_pro_subset:600",
+      "line_number": 600
+    },
+    {
+      "data_id": "mmlu_pro_subset:602",
+      "line_number": 602
+    },
+    {
+      "data_id": "mmlu_pro_subset:613",
+      "line_number": 613
+    },
+    {
+      "data_id": "mmlu_pro_subset:629",
+      "line_number": 629
+    },
+    {
+      "data_id": "mmlu_pro_subset:649",
+      "line_number": 649
+    },
+    {
+      "data_id": "mmlu_pro_subset:664",
+      "line_number": 664
+    },
+    {
+      "data_id": "mmlu_pro_subset:694",
+      "line_number": 694
+    },
+    {
+      "data_id": "mmlu_pro_subset:699",
+      "line_number": 699
+    },
+    {
+      "data_id": "mmlu_pro_subset:717",
+      "line_number": 717
+    },
+    {
+      "data_id": "mmlu_pro_subset:739",
+      "line_number": 739
+    },
+    {
+      "data_id": "mmlu_pro_subset:754",
+      "line_number": 754
+    },
+    {
+      "data_id": "mmlu_pro_subset:758",
+      "line_number": 758
+    },
+    {
+      "data_id": "mmlu_pro_subset:765",
+      "line_number": 765
+    },
+    {
+      "data_id": "mmlu_pro_subset:773",
+      "line_number": 773
+    },
+    {
+      "data_id": "mmlu_pro_subset:776",
+      "line_number": 776
+    },
+    {
+      "data_id": "mmlu_pro_subset:780",
+      "line_number": 780
+    },
+    {
+      "data_id": "mmlu_pro_subset:783",
+      "line_number": 783
+    },
+    {
+      "data_id": "mmlu_pro_subset:798",
+      "line_number": 798
+    },
+    {
+      "data_id": "mmlu_pro_subset:817",
+      "line_number": 817
+    },
+    {
+      "data_id": "mmlu_pro_subset:833",
+      "line_number": 833
+    },
+    {
+      "data_id": "mmlu_pro_subset:834",
+      "line_number": 834
+    },
+    {
+      "data_id": "mmlu_pro_subset:838",
+      "line_number": 838
+    },
+    {
+      "data_id": "mmlu_pro_subset:863",
+      "line_number": 863
+    },
+    {
+      "data_id": "mmlu_pro_subset:882",
+      "line_number": 882
+    },
+    {
+      "data_id": "mmlu_pro_subset:895",
+      "line_number": 895
+    },
+    {
+      "data_id": "mmlu_pro_subset:897",
+      "line_number": 897
+    },
+    {
+      "data_id": "mmlu_pro_subset:904",
+      "line_number": 904
+    },
+    {
+      "data_id": "mmlu_pro_subset:905",
+      "line_number": 905
+    },
+    {
+      "data_id": "mmlu_pro_subset:909",
+      "line_number": 909
+    },
+    {
+      "data_id": "mmlu_pro_subset:965",
+      "line_number": 965
+    },
+    {
+      "data_id": "mmlu_pro_subset:978",
+      "line_number": 978
+    },
+    {
+      "data_id": "mmlu_pro_subset:984",
+      "line_number": 984
+    },
+    {
+      "data_id": "mmlu_pro_subset:992",
+      "line_number": 992
+    },
+    {
+      "data_id": "mmlu_pro_subset:996",
+      "line_number": 996
+    },
+    {
+      "data_id": "mmlu_pro_subset:1000",
+      "line_number": 1000
+    },
+    {
+      "data_id": "mmlu_pro_subset:1027",
+      "line_number": 1027
+    },
+    {
+      "data_id": "mmlu_pro_subset:1028",
+      "line_number": 1028
+    },
+    {
+      "data_id": "mmlu_pro_subset:1061",
+      "line_number": 1061
+    },
+    {
+      "data_id": "mmlu_pro_subset:1065",
+      "line_number": 1065
+    },
+    {
+      "data_id": "mmlu_pro_subset:1066",
+      "line_number": 1066
+    },
+    {
+      "data_id": "mmlu_pro_subset:1067",
+      "line_number": 1067
+    },
+    {
+      "data_id": "mmlu_pro_subset:1111",
+      "line_number": 1111
+    },
+    {
+      "data_id": "mmlu_pro_subset:1128",
+      "line_number": 1128
+    },
+    {
+      "data_id": "mmlu_pro_subset:1129",
+      "line_number": 1129
+    },
+    {
+      "data_id": "mmlu_pro_subset:1151",
+      "line_number": 1151
+    },
+    {
+      "data_id": "mmlu_pro_subset:1155",
+      "line_number": 1155
+    },
+    {
+      "data_id": "mmlu_pro_subset:1179",
+      "line_number": 1179
+    },
+    {
+      "data_id": "mmlu_pro_subset:1180",
+      "line_number": 1180
+    },
+    {
+      "data_id": "mmlu_pro_subset:1190",
+      "line_number": 1190
+    },
+    {
+      "data_id": "mmlu_pro_subset:1193",
+      "line_number": 1193
+    },
+    {
+      "data_id": "mmlu_pro_subset:1234",
+      "line_number": 1234
+    },
+    {
+      "data_id": "mmlu_pro_subset:1235",
+      "line_number": 1235
+    },
+    {
+      "data_id": "mmlu_pro_subset:1243",
+      "line_number": 1243
+    },
+    {
+      "data_id": "mmlu_pro_subset:1271",
+      "line_number": 1271
+    },
+    {
+      "data_id": "mmlu_pro_subset:1276",
+      "line_number": 1276
+    },
+    {
+      "data_id": "mmlu_pro_subset:1296",
+      "line_number": 1296
+    },
+    {
+      "data_id": "mmlu_pro_subset:1299",
+      "line_number": 1299
+    },
+    {
+      "data_id": "mmlu_pro_subset:1311",
+      "line_number": 1311
+    },
+    {
+      "data_id": "mmlu_pro_subset:1329",
+      "line_number": 1329
+    },
+    {
+      "data_id": "mmlu_pro_subset:1333",
+      "line_number": 1333
+    },
+    {
+      "data_id": "mmlu_pro_subset:1353",
+      "line_number": 1353
+    },
+    {
+      "data_id": "mmlu_pro_subset:1363",
+      "line_number": 1363
+    },
+    {
+      "data_id": "mmlu_pro_subset:1365",
+      "line_number": 1365
+    },
+    {
+      "data_id": "mmlu_pro_subset:1374",
+      "line_number": 1374
+    },
+    {
+      "data_id": "mmlu_pro_subset:1376",
+      "line_number": 1376
+    },
+    {
+      "data_id": "mmlu_pro_subset:1403",
+      "line_number": 1403
+    },
+    {
+      "data_id": "mmlu_pro_subset:1435",
+      "line_number": 1435
+    },
+    {
+      "data_id": "mmlu_pro_subset:1443",
+      "line_number": 1443
+    },
+    {
+      "data_id": "mmlu_pro_subset:1450",
+      "line_number": 1450
+    },
+    {
+      "data_id": "mmlu_pro_subset:1463",
+      "line_number": 1463
+    },
+    {
+      "data_id": "mmlu_pro_subset:1464",
+      "line_number": 1464
+    },
+    {
+      "data_id": "mmlu_pro_subset:1467",
+      "line_number": 1467
+    },
+    {
+      "data_id": "mmlu_pro_subset:1469",
+      "line_number": 1469
+    },
+    {
+      "data_id": "mmlu_pro_subset:1472",
+      "line_number": 1472
+    },
+    {
+      "data_id": "mmlu_pro_subset:1517",
+      "line_number": 1517
+    },
+    {
+      "data_id": "mmlu_pro_subset:1524",
+      "line_number": 1524
+    },
+    {
+      "data_id": "mmlu_pro_subset:1577",
+      "line_number": 1577
+    },
+    {
+      "data_id": "mmlu_pro_subset:1578",
+      "line_number": 1578
+    },
+    {
+      "data_id": "mmlu_pro_subset:1590",
+      "line_number": 1590
+    },
+    {
+      "data_id": "mmlu_pro_subset:1592",
+      "line_number": 1592
+    },
+    {
+      "data_id": "mmlu_pro_subset:1603",
+      "line_number": 1603
+    },
+    {
+      "data_id": "mmlu_pro_subset:1634",
+      "line_number": 1634
+    },
+    {
+      "data_id": "mmlu_pro_subset:1659",
+      "line_number": 1659
+    },
+    {
+      "data_id": "mmlu_pro_subset:1679",
+      "line_number": 1679
+    },
+    {
+      "data_id": "mmlu_pro_subset:1698",
+      "line_number": 1698
+    },
+    {
+      "data_id": "mmlu_pro_subset:1718",
+      "line_number": 1718
+    },
+    {
+      "data_id": "mmlu_pro_subset:1723",
+      "line_number": 1723
+    },
+    {
+      "data_id": "mmlu_pro_subset:1744",
+      "line_number": 1744
+    },
+    {
+      "data_id": "mmlu_pro_subset:1746",
+      "line_number": 1746
+    },
+    {
+      "data_id": "mmlu_pro_subset:1779",
+      "line_number": 1779
+    },
+    {
+      "data_id": "mmlu_pro_subset:1787",
+      "line_number": 1787
+    },
+    {
+      "data_id": "mmlu_pro_subset:1812",
+      "line_number": 1812
+    },
+    {
+      "data_id": "mmlu_pro_subset:1814",
+      "line_number": 1814
+    },
+    {
+      "data_id": "mmlu_pro_subset:1823",
+      "line_number": 1823
+    },
+    {
+      "data_id": "mmlu_pro_subset:1835",
+      "line_number": 1835
+    },
+    {
+      "data_id": "mmlu_pro_subset:1846",
+      "line_number": 1846
+    },
+    {
+      "data_id": "mmlu_pro_subset:1876",
+      "line_number": 1876
+    },
+    {
+      "data_id": "mmlu_pro_subset:1914",
+      "line_number": 1914
+    },
+    {
+      "data_id": "mmlu_pro_subset:1927",
+      "line_number": 1927
+    },
+    {
+      "data_id": "mmlu_pro_subset:1932",
+      "line_number": 1932
+    },
+    {
+      "data_id": "mmlu_pro_subset:1934",
+      "line_number": 1934
+    },
+    {
+      "data_id": "mmlu_pro_subset:1952",
+      "line_number": 1952
+    },
+    {
+      "data_id": "mmlu_pro_subset:1953",
+      "line_number": 1953
+    },
+    {
+      "data_id": "mmlu_pro_subset:1954",
+      "line_number": 1954
+    },
+    {
+      "data_id": "mmlu_pro_subset:1963",
+      "line_number": 1963
+    },
+    {
+      "data_id": "mmlu_pro_subset:1974",
+      "line_number": 1974
+    },
+    {
+      "data_id": "mmlu_pro_subset:1991",
+      "line_number": 1991
+    },
+    {
+      "data_id": "mmlu_pro_subset:1993",
+      "line_number": 1993
+    },
+    {
+      "data_id": "mmlu_pro_subset:2005",
+      "line_number": 2005
+    },
+    {
+      "data_id": "mmlu_pro_subset:2018",
+      "line_number": 2018
+    },
+    {
+      "data_id": "mmlu_pro_subset:2022",
+      "line_number": 2022
+    },
+    {
+      "data_id": "mmlu_pro_subset:2063",
+      "line_number": 2063
+    },
+    {
+      "data_id": "mmlu_pro_subset:2068",
+      "line_number": 2068
+    },
+    {
+      "data_id": "mmlu_pro_subset:2081",
+      "line_number": 2081
+    },
+    {
+      "data_id": "mmlu_pro_subset:2084",
+      "line_number": 2084
+    },
+    {
+      "data_id": "mmlu_pro_subset:2095",
+      "line_number": 2095
+    },
+    {
+      "data_id": "mmlu_pro_subset:2136",
+      "line_number": 2136
+    },
+    {
+      "data_id": "mmlu_pro_subset:2138",
+      "line_number": 2138
+    },
+    {
+      "data_id": "mmlu_pro_subset:2149",
+      "line_number": 2149
+    },
+    {
+      "data_id": "mmlu_pro_subset:2169",
+      "line_number": 2169
+    },
+    {
+      "data_id": "mmlu_pro_subset:2182",
+      "line_number": 2182
+    },
+    {
+      "data_id": "mmlu_pro_subset:2189",
+      "line_number": 2189
+    },
+    {
+      "data_id": "mmlu_pro_subset:2214",
+      "line_number": 2214
+    },
+    {
+      "data_id": "mmlu_pro_subset:2215",
+      "line_number": 2215
+    },
+    {
+      "data_id": "mmlu_pro_subset:2225",
+      "line_number": 2225
+    },
+    {
+      "data_id": "mmlu_pro_subset:2230",
+      "line_number": 2230
+    },
+    {
+      "data_id": "mmlu_pro_subset:2242",
+      "line_number": 2242
+    },
+    {
+      "data_id": "mmlu_pro_subset:2243",
+      "line_number": 2243
+    },
+    {
+      "data_id": "mmlu_pro_subset:2248",
+      "line_number": 2248
+    },
+    {
+      "data_id": "mmlu_pro_subset:2258",
+      "line_number": 2258
+    },
+    {
+      "data_id": "mmlu_pro_subset:2264",
+      "line_number": 2264
+    },
+    {
+      "data_id": "mmlu_pro_subset:2293",
+      "line_number": 2293
+    },
+    {
+      "data_id": "mmlu_pro_subset:2297",
+      "line_number": 2297
+    },
+    {
+      "data_id": "mmlu_pro_subset:2325",
+      "line_number": 2325
+    },
+    {
+      "data_id": "mmlu_pro_subset:2332",
+      "line_number": 2332
+    },
+    {
+      "data_id": "mmlu_pro_subset:2334",
+      "line_number": 2334
+    },
+    {
+      "data_id": "mmlu_pro_subset:2351",
+      "line_number": 2351
+    },
+    {
+      "data_id": "mmlu_pro_subset:2358",
+      "line_number": 2358
+    },
+    {
+      "data_id": "mmlu_pro_subset:2360",
+      "line_number": 2360
+    },
+    {
+      "data_id": "mmlu_pro_subset:2375",
+      "line_number": 2375
+    },
+    {
+      "data_id": "mmlu_pro_subset:2390",
+      "line_number": 2390
+    },
+    {
+      "data_id": "mmlu_pro_subset:2405",
+      "line_number": 2405
+    }
+  ],
+  "identity": "3030aa54d0c1e53b0b5805e2aa82693ee6c2102336bbaac2f46722d16201f802"
+}

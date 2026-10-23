@@ -1,0 +1,17 @@
+openai
+datasets
+pyyaml
+torch
+transformers==5.14.1
+sympy
+pydantic
+sentence_transformers
+numpy
+pandas
+pyarrow
+scipy
+scikit-learn
+joblib
+matplotlib
+tqdm
+# vllm==0.25.1

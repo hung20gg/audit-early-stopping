@@ -1,0 +1,1 @@
+Given a user query and a ChatGPT response, determine whether the response contains a hallucination. Make the final output only `yes` or `no`, enclosed in \boxed{}. Use `yes` if it is a hallucination and `no` otherwise. For example: \boxed{no}

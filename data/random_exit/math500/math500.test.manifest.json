@@ -1,0 +1,526 @@
+{
+  "version": 1,
+  "dataset": "math500",
+  "split": "test",
+  "dataset_size": 500,
+  "dataset_fingerprint": "fec6d362a83b789075d1f7126499d79c00037a6452206b4ceebb7a7a3cda1f03",
+  "sample_size": 128,
+  "sample_seed": 0,
+  "candidate_size": 486,
+  "candidate_fingerprint": "0f077565de49da27ee4f982832603c1ad6da8f2239dd1bee60bfee108670ee1e",
+  "items": [
+    {
+      "data_id": "math500:8",
+      "line_number": 8
+    },
+    {
+      "data_id": "math500:22",
+      "line_number": 22
+    },
+    {
+      "data_id": "math500:33",
+      "line_number": 33
+    },
+    {
+      "data_id": "math500:39",
+      "line_number": 39
+    },
+    {
+      "data_id": "math500:50",
+      "line_number": 50
+    },
+    {
+      "data_id": "math500:51",
+      "line_number": 51
+    },
+    {
+      "data_id": "math500:53",
+      "line_number": 53
+    },
+    {
+      "data_id": "math500:54",
+      "line_number": 54
+    },
+    {
+      "data_id": "math500:75",
+      "line_number": 75
+    },
+    {
+      "data_id": "math500:79",
+      "line_number": 79
+    },
+    {
+      "data_id": "math500:109",
+      "line_number": 109
+    },
+    {
+      "data_id": "math500:116",
+      "line_number": 116
+    },
+    {
+      "data_id": "math500:138",
+      "line_number": 138
+    },
+    {
+      "data_id": "math500:142",
+      "line_number": 142
+    },
+    {
+      "data_id": "math500:143",
+      "line_number": 143
+    },
+    {
+      "data_id": "math500:154",
+      "line_number": 154
+    },
+    {
+      "data_id": "math500:166",
+      "line_number": 166
+    },
+    {
+      "data_id": "math500:170",
+      "line_number": 170
+    },
+    {
+      "data_id": "math500:173",
+      "line_number": 173
+    },
+    {
+      "data_id": "math500:181",
+      "line_number": 181
+    },
+    {
+      "data_id": "math500:193",
+      "line_number": 193
+    },
+    {
+      "data_id": "math500:195",
+      "line_number": 195
+    },
+    {
+      "data_id": "math500:210",
+      "line_number": 210
+    },
+    {
+      "data_id": "math500:220",
+      "line_number": 220
+    },
+    {
+      "data_id": "math500:228",
+      "line_number": 228
+    },
+    {
+      "data_id": "math500:235",
+      "line_number": 235
+    },
+    {
+      "data_id": "math500:239",
+      "line_number": 239
+    },
+    {
+      "data_id": "math500:255",
+      "line_number": 255
+    },
+    {
+      "data_id": "math500:258",
+      "line_number": 258
+    },
+    {
+      "data_id": "math500:262",
+      "line_number": 262
+    },
+    {
+      "data_id": "math500:272",
+      "line_number": 272
+    },
+    {
+      "data_id": "math500:275",
+      "line_number": 275
+    },
+    {
+      "data_id": "math500:280",
+      "line_number": 280
+    },
+    {
+      "data_id": "math500:286",
+      "line_number": 286
+    },
+    {
+      "data_id": "math500:295",
+      "line_number": 295
+    },
+    {
+      "data_id": "math500:297",
+      "line_number": 297
+    },
+    {
+      "data_id": "math500:301",
+      "line_number": 301
+    },
+    {
+      "data_id": "math500:315",
+      "line_number": 315
+    },
+    {
+      "data_id": "math500:326",
+      "line_number": 326
+    },
+    {
+      "data_id": "math500:330",
+      "line_number": 330
+    },
+    {
+      "data_id": "math500:334",
+      "line_number": 334
+    },
+    {
+      "data_id": "math500:345",
+      "line_number": 345
+    },
+    {
+      "data_id": "math500:368",
+      "line_number": 368
+    },
+    {
+      "data_id": "math500:379",
+      "line_number": 379
+    },
+    {
+      "data_id": "math500:392",
+      "line_number": 392
+    },
+    {
+      "data_id": "math500:406",
+      "line_number": 406
+    },
+    {
+      "data_id": "math500:408",
+      "line_number": 408
+    },
+    {
+      "data_id": "math500:421",
+      "line_number": 421
+    },
+    {
+      "data_id": "math500:429",
+      "line_number": 429
+    },
+    {
+      "data_id": "math500:432",
+      "line_number": 432
+    },
+    {
+      "data_id": "math500:434",
+      "line_number": 434
+    },
+    {
+      "data_id": "math500:444",
+      "line_number": 444
+    },
+    {
+      "data_id": "math500:453",
+      "line_number": 453
+    },
+    {
+      "data_id": "math500:456",
+      "line_number": 456
+    },
+    {
+      "data_id": "math500:464",
+      "line_number": 464
+    },
+    {
+      "data_id": "math500:477",
+      "line_number": 477
+    },
+    {
+      "data_id": "math500:478",
+      "line_number": 478
+    },
+    {
+      "data_id": "math500:484",
+      "line_number": 484
+    },
+    {
+      "data_id": "math500:485",
+      "line_number": 485
+    },
+    {
+      "data_id": "math500:488",
+      "line_number": 488
+    },
+    {
+      "data_id": "math500:489",
+      "line_number": 489
+    },
+    {
+      "data_id": "math500:492",
+      "line_number": 492
+    },
+    {
+      "data_id": "math500:493",
+      "line_number": 493
+    },
+    {
+      "data_id": "math500:495",
+      "line_number": 495
+    },
+    {
+      "data_id": "math500:1",
+      "line_number": 1
+    },
+    {
+      "data_id": "math500:9",
+      "line_number": 9
+    },
+    {
+      "data_id": "math500:23",
+      "line_number": 23
+    },
+    {
+      "data_id": "math500:35",
+      "line_number": 35
+    },
+    {
+      "data_id": "math500:36",
+      "line_number": 36
+    },
+    {
+      "data_id": "math500:42",
+      "line_number": 42
+    },
+    {
+      "data_id": "math500:57",
+      "line_number": 57
+    },
+    {
+      "data_id": "math500:58",
+      "line_number": 58
+    },
+    {
+      "data_id": "math500:60",
+      "line_number": 60
+    },
+    {
+      "data_id": "math500:61",
+      "line_number": 61
+    },
+    {
+      "data_id": "math500:84",
+      "line_number": 84
+    },
+    {
+      "data_id": "math500:88",
+      "line_number": 88
+    },
+    {
+      "data_id": "math500:119",
+      "line_number": 119
+    },
+    {
+      "data_id": "math500:126",
+      "line_number": 126
+    },
+    {
+      "data_id": "math500:141",
+      "line_number": 141
+    },
+    {
+      "data_id": "math500:147",
+      "line_number": 147
+    },
+    {
+      "data_id": "math500:151",
+      "line_number": 151
+    },
+    {
+      "data_id": "math500:152",
+      "line_number": 152
+    },
+    {
+      "data_id": "math500:164",
+      "line_number": 164
+    },
+    {
+      "data_id": "math500:179",
+      "line_number": 179
+    },
+    {
+      "data_id": "math500:183",
+      "line_number": 183
+    },
+    {
+      "data_id": "math500:186",
+      "line_number": 186
+    },
+    {
+      "data_id": "math500:191",
+      "line_number": 191
+    },
+    {
+      "data_id": "math500:196",
+      "line_number": 196
+    },
+    {
+      "data_id": "math500:197",
+      "line_number": 197
+    },
+    {
+      "data_id": "math500:208",
+      "line_number": 208
+    },
+    {
+      "data_id": "math500:211",
+      "line_number": 211
+    },
+    {
+      "data_id": "math500:226",
+      "line_number": 226
+    },
+    {
+      "data_id": "math500:234",
+      "line_number": 234
+    },
+    {
+      "data_id": "math500:238",
+      "line_number": 238
+    },
+    {
+      "data_id": "math500:247",
+      "line_number": 247
+    },
+    {
+      "data_id": "math500:254",
+      "line_number": 254
+    },
+    {
+      "data_id": "math500:260",
+      "line_number": 260
+    },
+    {
+      "data_id": "math500:278",
+      "line_number": 278
+    },
+    {
+      "data_id": "math500:282",
+      "line_number": 282
+    },
+    {
+      "data_id": "math500:287",
+      "line_number": 287
+    },
+    {
+      "data_id": "math500:291",
+      "line_number": 291
+    },
+    {
+      "data_id": "math500:299",
+      "line_number": 299
+    },
+    {
+      "data_id": "math500:304",
+      "line_number": 304
+    },
+    {
+      "data_id": "math500:310",
+      "line_number": 310
+    },
+    {
+      "data_id": "math500:317",
+      "line_number": 317
+    },
+    {
+      "data_id": "math500:327",
+      "line_number": 327
+    },
+    {
+      "data_id": "math500:329",
+      "line_number": 329
+    },
+    {
+      "data_id": "math500:335",
+      "line_number": 335
+    },
+    {
+      "data_id": "math500:348",
+      "line_number": 348
+    },
+    {
+      "data_id": "math500:358",
+      "line_number": 358
+    },
+    {
+      "data_id": "math500:362",
+      "line_number": 362
+    },
+    {
+      "data_id": "math500:363",
+      "line_number": 363
+    },
+    {
+      "data_id": "math500:366",
+      "line_number": 366
+    },
+    {
+      "data_id": "math500:371",
+      "line_number": 371
+    },
+    {
+      "data_id": "math500:378",
+      "line_number": 378
+    },
+    {
+      "data_id": "math500:396",
+      "line_number": 396
+    },
+    {
+      "data_id": "math500:405",
+      "line_number": 405
+    },
+    {
+      "data_id": "math500:417",
+      "line_number": 417
+    },
+    {
+      "data_id": "math500:418",
+      "line_number": 418
+    },
+    {
+      "data_id": "math500:420",
+      "line_number": 420
+    },
+    {
+      "data_id": "math500:426",
+      "line_number": 426
+    },
+    {
+      "data_id": "math500:433",
+      "line_number": 433
+    },
+    {
+      "data_id": "math500:449",
+      "line_number": 449
+    },
+    {
+      "data_id": "math500:451",
+      "line_number": 451
+    },
+    {
+      "data_id": "math500:467",
+      "line_number": 467
+    },
+    {
+      "data_id": "math500:476",
+      "line_number": 476
+    },
+    {
+      "data_id": "math500:483",
+      "line_number": 483
+    },
+    {
+      "data_id": "math500:487",
+      "line_number": 487
+    }
+  ],
+  "identity": "d2d54a788480012f8df199fd4700c57490c1c449c7961d54a61de13f200b10c3"
+}

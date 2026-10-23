@@ -1,0 +1,71 @@
+base_model: Qwen/Qwen3.5-4B
+# Add one entry for every embedding-folder and replay-JSONL pair.
+# All entries are concatenated before problem-level train/calibration/test splitting.
+datasets:
+  - shards: output/replay_hidden_states/math_train_3/qwen35_4b
+    curation_jsonl: outputs/replay_curation/math_train_3.jsonl
+  - shards: output/replay_hidden_states/math_train_4/qwen35_4b
+    curation_jsonl: outputs/replay_curation/math_train_4.jsonl
+  - shards: output/replay_hidden_states/math_train_5/qwen35_4b
+    curation_jsonl: outputs/replay_curation/math_train_5.jsonl
+
+# Probe, deployment config, thresholds, splits, and metrics are written here.
+output_dir: checkpoints/thought_calibration/replay/qwen35_4b
+output_policy: error  # error | overwrite | resume
+
+features:
+  source: pre_final_rmsnorm
+  pooling: segment_mean
+  record_method: curation_grid
+  label_policy: cumulative_first_correct
+  duplicate_label_policy: require_agreement
+  empty_segment_policy: skip
+
+split:
+  train_fraction: 0.50
+  calibration_fraction: 0.45
+  test_fraction: 0.05
+  seed: 42
+
+standard_scaler:
+  with_mean: true
+  with_std: true
+
+pca:
+  n_components: 256
+  svd_solver: auto
+  whiten: false
+  random_state: 42
+
+logistic_regression:
+  solver: lbfgs
+  C: 1.0
+  max_iter: 2000
+  class_weight: null
+  tol: 0.0001
+  random_state: 42
+
+smoothing:
+  window: 10
+
+ltt:
+  risk_tolerances: [0.05, 0.10]
+  failure_probability: 0.05
+  threshold_grid:
+    minimum: 0.50
+    maximum: 0.99
+    count: 100
+  comparison: ">="
+  loss: binary_stop
+  fallback: full_budget
+
+loading:
+  batch_size: 1
+  workers: 0
+  cache: true
+
+logging:
+  level: INFO
+
+numeric:
+  dtype: auto

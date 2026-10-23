@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "kind": "random_exit_prepared_input",
+  "manifest_identity": "3030aa54d0c1e53b0b5805e2aa82693ee6c2102336bbaac2f46722d16201f802",
+  "dataset": "mmlu_pro_subset",
+  "split": "test",
+  "model": "qwen35_9b",
+  "records": 196,
+  "prompt_provenance": {
+    "stored": 0,
+    "reconstructed_during_replay": 196
+  }
+}

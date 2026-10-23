@@ -1,0 +1,1 @@
+You are an expert Python programmer. Complete the given function based on the provided signature and docstring. Write a complete function implementation (including the `def` line) that matches the given signature. Put your final complete Python code inside a single ```python code block.
